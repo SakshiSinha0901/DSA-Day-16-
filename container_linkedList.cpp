@@ -154,3 +154,95 @@ int main(){
     return 0;
 
 }
+
+// G. remove(const T & value)
+#include <iostream>
+#include <list>  // header file
+using namespace std;
+
+int main(){
+    list<int>List;
+    List.push_back(10);
+    List.push_back(20);
+    List.push_back(30);
+    // 10, 20, 30
+    List.push_back(10);
+    // 10,20,30,10
+    List.remove(10);  //remove()
+    cout<<"After removing"<<endl;
+    list<int>:: iterator it = List.begin(); //creating iterator
+
+    while(it != List.end()){
+        cout<<*it<<"  ";
+        it++;
+    }
+    return 0;
+}    
+
+// H. swap(list & x )
+#include <iostream>
+#include <list>  // header file
+using namespace std;
+
+int main(){
+    list<int>first;
+    first.push_back(10);
+    first.push_back(20);
+    first.push_back(30);
+    // 10, 20, 30
+
+    list<int>second;
+    second.push_back(100);
+    second.push_back(200);
+    second.push_back(300);
+    // 100, 200, 300
+
+    first.swap(second);
+
+    list<int>::iterator it2 = first.begin();
+    while (it2 != first.end()){
+        cout<<*it2<<"  ";
+        it2++;
+    }
+}    
+
+// I. insert(iterator position, const T & value)
+#include <iostream>
+#include <list>
+using namespace std;
+
+int main(){
+    list<int>first;
+    first.push_back(10);
+    first.push_back(20);
+    first.push_back(30);
+    // 10, 20, 30
+
+    first.insert(first.begin(),100);  //insert()
+
+    list<int>::iterator it2 = first.begin();
+    while (it2 != first.end()){
+        cout<<*it2<<"  ";
+        it2++;
+    }
+}
+
+// J. erase(iterator position) & erase(iterator first, iterator last)
+#include <iostream>
+#include <list>
+using namespace std;
+
+int main(){
+    list<int>first;
+    first.push_back(10);
+    first.push_back(20);
+    first.push_back(30);
+    // 10, 20, 30
+    cout<<"Before erasing:"<<endl;
+    cout<<first.size()<<endl;
+
+    first.erase(first.begin(),first.end());  // erase()
+
+    cout<<"After erasing:"<<endl;
+    cout<<first.size()<<endl;
+}
